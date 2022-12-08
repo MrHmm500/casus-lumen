@@ -1,4 +1,4 @@
-THEY put you in a square shape room, with N meters on each side.
+THEY put you in a square shape room, with N meters on each side.  
 THEY want to know everything about you.
 THEY are observing you.
 THEY placed some candles in the room.
