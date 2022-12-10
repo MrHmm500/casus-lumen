@@ -1,0 +1,38 @@
+{
+  "THEY only have one candle": {
+    "expectedOutput" : "9",
+    "input": "X X X X X\nX C X X X\nX X X X X\nX X X X X\nX X X X X"
+  },
+  "THEY are doing a ritual": {
+    "expectedOutput" : "0",
+    "input" : "C X X X C\nX X X X X\nX X X X X\nX X X X X\nC X X X C"
+  },
+  "THEY have a large pit" : {
+    "expectedOutput" : "2",
+    "input" : "X X X X X\nX C X X X\nX X X X X\nX X X C X\nX X X X X"
+  },
+  "THEY have a small cellar" : {
+    "expectedOutput" : "4",
+    "input" : "X X X X X X\nX C X X X X\nX X X X X X\nX X X C X X\nX X X X X X\nX X X X X X"
+  },
+  "THEY have a medium cellar" : {
+    "expectedOutput" : "14",
+    "input" : "X X X X X X X X X X X X C X X\nX X X X X X X X X X X X C X X\nX X X X X X X X X C X X X X X\nX X X X X C X X X X X X X X X\nX X X X C X X X X X X X X X X\nC X X X X X X X C X X C X X X\nX X X X X C X X X X X X X X C\nX C X X X X X X X X X X X X X\nX X X X X X X C X C X X X X X\nX X X X X X X X X X X X C X X\nX X X X X X X X X X X X X X X\nX X C X C X X X X X X X X X C\nX X X X X X C X X X C X X X X\nX C X X X X X X X X X X X X X\nX X X X X X X X X X X X X X X"
+  },
+  "THEY have a large cellar" : {
+    "expectedOutput" : "34",
+    "input" : "X X X C X C X X X X X X X X X X X X X X\nX C X X X C X X X X C X X X X C X X X X\nX X X X X X X X X X X X X C C X X X X X\nX X X X X X X X X X X X X X X X X X X X\nX X X X X X X X X X X X X X X X X X X C\nX X X X X X X X C X X X X X X X C X X X\nX X X X X C X X X X X X X X C X X X X C\nX X X X X X C X X C C C X X X X X X X X\nX C X X X X X X X X C X X X C X X X X X\nX X X X C X X C X X X X X X X X X C X X\nX X X X X X X X X C X C X X X X X X X X\nX X X X X X X X X X X X X X X X X X X X\nX X X X X X C X X X X X X X X X X C X X\nX X X X X X X X X X X X X X X X X X X X\nX X X X X X X X X C C X X X X C X X X X\nX X X X X X X X X X X X C C C X X X X X\nX X X X X X X X C X X X X X X X C C X X\nX X X C X X X X X X X X X X X X X C X X\nX X X X X C X X X X X X X X X C X X X X\nX C X C X X X X X X X X X X X X X X X X"
+  },
+  "THEY are not very smart" : {
+    "expectedOutput" : "9",
+    "input" : "X X X\nX X X\nX X X"
+  },
+  "THEY have a great hall" : {
+    "expectedOutput" : "90",
+    "input" : "\nX X C C C C X X X X C C X X X C X X X X X C X X X\nC X X X X X X X X X X X X X X C X X X X X X X X X\nX X X X X X X X X X X X C X X X X C X X X C C X X\nC X X X X C X X X X X X X X X X X X X C X X X X X\nX X C X C X X X X X X X X X C X X C X X X C X X X\nX X X X X C X X X X X X X C X C X X X X X X X X X\nC X X X X C C X X X X X X X X X C X X X X X X C X\nC X C C X X C X X C X X C C X X C X X X X X X X X\nX X X X X X X X X X X X X X X X X C X X X X X C X\nX C X X X X X X X X X X X X X X X X X C C X X X X\nC X X X X X X C X C X X X X C X X X X X C X X X X\nX C X X C X X X X X X X X X C X X X X X C X X X C\nX X X X X X X X X C X X C X X X X X X X X X C X X\nX X C X C X X X X X C X X X X X X C C X X X C X C\nC X C C X X X X X X X X X X C X X X X X C X X X X\nC X X C X C X X C C X X X C C X X X X X X X C C X\nC X X X X X X X X X X X X X X X X X X C X X X X X\nX X X X X X X C X X X X X X C X X X X X X X C X X\nX C X C X X C X X X X X C X X X X X X X C C X C X\nX X X C X X C C C X X C X X X X X C X X X X X X X\nX C X X X X X X X X X X X C X X X X X X X X X X X\nX X X C C X X C X C X X X X X X X X X C C X X X X\nX X C X X X X C X C C X X X X X C X X X X C C X X\nX X X X C X X X X X C X X X X X C X X X C X X C X\nX X X C X X C X X X X X X X X X X X C X X X X X X"
+  },
+  "Not Euclidean" : {
+    "expectedOutput" : "9",
+    "input" : "C X X X X\nX X X X X\nX X X X X\nX X X X X\nX X X X X"
+  }
+}
