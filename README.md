@@ -22,3 +22,5 @@ X X X X X
 2 2 2 1 0  
 1 1 1 1 0  
 0 0 0 0 0  
+
+To run this: php -S localhost:8080 -t [folder name]
