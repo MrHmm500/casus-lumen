@@ -1,62 +1,69 @@
 <?php
 $jsonTestCases = file_get_contents('testcases.json');
 $testCases = json_decode($jsonTestCases);
-foreach($testCases as $caseName => $caseData) {
+foreach ($testCases as $caseName => $caseData) {
     echo "-----------------------------------<br />";
     echo $caseName . ' wordt getest<br />';
     echo 'expected output: <br />';
     echo str_replace("\n", '<br />', str_replace(' ', '&nbsp;', $caseData->expectedOutput)) . '<br /><br />';
 
-    $inputlines = explode("\n", $caseData->input);
-
-    // ugly code to accommodate for the actual casus' data
-    $L = 3;
-    switch($caseName) {
-        case 'THEY have a great hall':
-            $L = 2;
-            break;
-        case 'Not Euclidean':
-            $L = 4;
-            break;
-    }
-    $inputLinesArray = [];
-    foreach ($inputlines as $i => $inputline) {
-        $inputLinesArray[] = explode(' ', $inputline);
-    }
+    $input = getInput($caseData);
 
     echo "-----------------------------------<br />";
     echo "actual output:<br />";
 
-    extractOutputFromInput($inputLinesArray, $L);
+    extractOutputFromInput($input, $caseData->L);
 
     echo "<br />";
 }
 
-function extractOutputFromInput($cells, $L) {
+function extractOutputFromInput(array $cells, int $L): void {
+    $lights = getLights($cells);
+
+    $amountOfEmptySpots = 0;
+    foreach ($cells as $i => $rows) {
+        foreach ($rows as $j => $cell) {
+            if ($cell !== 'X') {
+                continue;
+            }
+
+            $gotLight = false;
+            foreach ($lights as $light) {
+                if (abs($light[0] - $i) < $L && abs($light[1] - $j) < $L) {
+                    $gotLight = true;
+                }
+            }
+
+            if ($gotLight) {
+                continue;
+            }
+
+            $amountOfEmptySpots++;
+        }
+    }
+    echo $amountOfEmptySpots;
+}
+
+function getInput(stdClass $caseData): array {
+    $inputLines = explode("\n", $caseData->input);
+
+    $inputLinesArray = [];
+    foreach ($inputLines as $inputLine) {
+        $inputLinesArray[] = explode(' ', $inputLine);
+    }
+
+    return $inputLinesArray;
+}
+
+function getLights(array $cells): array {
     $lights = [];
     foreach ($cells as $i => $rows) {
         foreach ($rows as $j => $cell) {
-            if (trim($cell) == 'C') {
+            if ($cell === 'C') {
                 $lights[] = [$i, $j];
             }
         }
     }
 
-    $amountOfEmptySpots = 0;
-    foreach($cells as $i => $rows) {
-        foreach($rows as $j => $cell) {
-            if (trim($cell) == 'X') {
-                $gotLight = false;
-                foreach($lights as $light) {
-                    if(abs($light[0] - $i) < $L && abs($light[1] - $j) < $L) {
-                        $gotLight = true;
-                    }
-                }
-                if(!$gotLight) {
-                    $amountOfEmptySpots++;
-                }
-            }
-        }
-    }
-    echo $amountOfEmptySpots;
+    return $lights;
 }
